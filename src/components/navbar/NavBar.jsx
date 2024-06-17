@@ -25,7 +25,7 @@ function NavBar() {
     <nav className='navbar navbar-expand-lg'>
       <Link to='/' className='nav-link'>
         <img
-          src=''
+          src='https://logowik.com/content/uploads/images/food-service4537.jpg'
           alt='web-logo'
           width="75px"
         />

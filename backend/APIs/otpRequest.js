@@ -14,6 +14,7 @@ otpRoute.post('/check-mail', expressAsyncHandler(async (request, response) => {
     const mail = request.body.email;
 
     const mailInDb = await userscollection.findOne({ email:mail });
+    console.log(mailInDb);
 
     if (!mailInDb) {
         response.status(404).send({ message: "e-mail doesn't exist" });
