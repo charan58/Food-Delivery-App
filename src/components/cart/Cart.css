@@ -1,0 +1,36 @@
+.heading{
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+.total-cost{
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.delivery-info{
+    color: #fff;
+    text-align: center;
+}
+.estimated-delivery-time{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+.apply-coupon-btn
+{
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 4px;
+}
+.total-cost-second
+{
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+.delivery-info-checkout
+{
+    display: flex;
+    justify-content: center ;
+    gap: 20px;
+}

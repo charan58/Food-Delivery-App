@@ -1,0 +1,216 @@
+ <div className='card form-card mx-auto'>
+        <div className='card-body'>
+          <h5 className='card-title text-center'>Payment Options</h5>
+          <form onSubmit={handleSubmit(handlePaymentForm)}>
+            {/* Payment Method */}
+            <div className='form-group mb-3'>
+              <label className='form-label'>Payment Method</label>
+              <div className='form-check'>
+                <input
+                  className='form-check-input'
+                  type='radio'
+                  id='creditCard'
+                  name='paymentMethod'
+                  value='creditCard'
+                  {...register('paymentMethod')}
+                  onChange={handlePaymentSelection}
+                />
+                <label className='form-check-label' htmlFor='creditCard'>
+                  Credit Card
+                </label>
+              </div>
+              <div className='form-check'>
+                <input
+                  className='form-check-input'
+                  type='radio'
+                  id='debitCard'
+                  name='paymentMethod'
+                  value='debitCard'
+                  {...register('paymentMethod')}
+                  onChange={handlePaymentSelection}
+                />
+                <label className='form-check-label' htmlFor='debitCard'>
+                  Debit Card
+                </label>
+              </div>
+              <div className='form-check'>
+                <input
+                  className='form-check-input'
+                  type='radio'
+                  id='upi'
+                  name='paymentMethod'
+                  value='upi'
+                  {...register('paymentMethod')}
+                  onChange={handlePaymentSelection}
+                />
+                <label className='form-check-label' htmlFor='upi'>
+                  UPI
+                </label>
+              </div>
+              <div className='form-check'>
+                <input
+                  className='form-check-input'
+                  type='radio'
+                  id='cod'
+                  name='paymentMethod'
+                  value='cod'
+                  {...register('paymentMethod')}
+                  onChange={handlePaymentSelection}
+                />
+                <label className='form-check-label' htmlFor='cod'>
+                  Cash on Delivery
+                </label>
+              </div>
+              <div className='form-check'>
+                <input
+                  className='form-check-input'
+                  type='radio'
+                  id='paypal'
+                  name='paymentMethod'
+                  value='paypal'
+                  {...register('paymentMethod')}
+                  onChange={handlePaymentSelection}
+                />
+                <label className='form-check-label' htmlFor='paypal'>
+                  PayPal
+                </label>
+              </div>
+              <div className='form-check'>
+                <input
+                  className='form-check-input'
+                  type='radio'
+                  id='netBanking'
+                  name='paymentMethod'
+                  value='netBanking'
+                  {...register('paymentMethod')}
+                  onChange={handlePaymentSelection}
+                />
+                <label className='form-check-label' htmlFor='netBanking'>
+                  Net Banking
+                </label>
+              </div>
+            </div>
+
+            {/* Additional fields based on selected payment method */}
+            {selectedPayment === 'creditCard' && (
+              <div className='card-details-container'>
+                <div className='form-group mb-3'>
+                  <label className='form-label'>Card Number</label>
+                  <input
+                    type='text'
+                    className='form-control'
+                    {...register('cardNumber', { required: 'Card number is required' })}
+                  />
+                  {errors.cardNumber && <p className='invalid-feedback'>{errors.cardNumber.message}</p>}
+                </div>
+                <div className='form-group mb-3'>
+                  <label className='form-label'>Expiry Date</label>
+                  <input
+                    type='text'
+                    className='form-control'
+                    {...register('expiryDate', { required: 'Expiry date is required' })}
+                  />
+                  {errors.expiryDate && <p className='invalid-feedback'>{errors.expiryDate.message}</p>}
+                </div>
+                <div className='form-group mb-3'>
+                  <label className='form-label'>CVV</label>
+                  <input
+                    type='text'
+                    className='form-control'
+                    {...register('cvv', { required: 'CVV is required' })}
+                  />
+                  {errors.cvv && <p className='invalid-feedback'>{errors.cvv.message}</p>}
+                </div>
+              </div>
+            )}
+
+            {selectedPayment === 'debitCard' && (
+              <div className='card-details-container'>
+                <div className='form-group mb-3'>
+                  <label className='form-label'>Card Number</label>
+                  <input
+                    type='text'
+                    className='form-control'
+                    {...register('cardNumber', { required: 'Card number is required' })}
+                  />
+                  {errors.cardNumber && <p className='invalid-feedback'>{errors.cardNumber.message}</p>}
+                </div>
+                <div className='form-group mb-3'>
+                  <label className='form-label'>Expiry Date</label>
+                  <input
+                    type='text'
+                    className='form-control'
+                    {...register('expiryDate', { required: 'Expiry date is required' })}
+                  />
+                  {errors.expiryDate && <p className='invalid-feedback'>{errors.expiryDate.message}</p>}
+                </div>
+                <div className='form-group mb-3'>
+                  <label className='form-label'>CVV</label>
+                  <input
+                    type='text'
+                    className='form-control'
+                    {...register('cvv', { required: 'CVV is required' })}
+                  />
+                  {errors.cvv && <p className='invalid-feedback'>{errors.cvv.message}</p>}
+                </div>
+              </div>
+            )}
+
+            {selectedPayment === 'upi' && (
+              <div className='card-details-container'>
+                <div className='form-group mb-3'>
+                  <label className='form-label'>UPI ID</label>
+                  <input
+                    type='text'
+                    className='form-control'
+                    {...register('upiId', { required: 'UPI ID is required' })}
+                  />
+                  {errors.upiId && <p className='invalid-feedback'>{errors.upiId.message}</p>}
+                </div>
+              </div>
+            )}
+
+            {selectedPayment === 'paypal' && (
+              <div className='card-details-container'>
+                <div className='form-group mb-3'>
+                  <label className='form-label'>PayPal Email</label>
+                  <input
+                    type='email'
+                    className='form-control'
+                    {...register('paypalEmail', { required: 'PayPal email is required', pattern: /^\S+@\S+$/i })}
+                  />
+                  {errors.paypalEmail && <p className='invalid-feedback'>Please enter a valid PayPal email address.</p>}
+                </div>
+              </div>
+            )}
+
+            {selectedPayment === 'netBanking' && (
+              <div className='card-details-container'>
+                <div className='form-group mb-3'>
+                  <label className='form-label'>Bank Name</label>
+                  <input
+                    type='text'
+                    className='form-control'
+                    {...register('bankName', { required: 'Bank name is required' })}
+                  />
+                  {errors.bankName && <p className='invalid-feedback'>{errors.bankName.message}</p>}
+                </div>
+                <div className='form-group mb-3'>
+                  <label className='form-label'>Account Number</label>
+                  <input
+                    type='text'
+                    className='form-control'
+                    {...register('accountNumber', { required: 'Account number is required' })}
+                  />
+                  {errors.accountNumber && <p className='invalid-feedback'>{errors.accountNumber.message}</p>}
+                </div>
+              </div>
+            )}
+
+            {/* Button to submit */}
+            <button className='btn btn-success w-100' type='submit'>
+              Proceed to Pay
+            </button>
+          </form>
+        </div>
+      </div>

@@ -1,0 +1,27 @@
+.home-container
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    /* background-color: #f8f9fa; */
+    background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 99%, #4ca1af 100%);
+}
+
+.form-card
+{
+    width: 25rem;
+    max-width: 400px;
+    padding: 20px;
+    box-shadow: 10px 14px 18px rgba(10,10,10,0.1);
+}
+
+.invalid-feedback
+{
+    display: block;
+}
+.form-check-input
+{
+    border: 1px solid black;
+}

@@ -1,0 +1,71 @@
+.container {
+  max-width: 100%;
+  padding: 2rem;
+  
+}
+
+.carousel-caption h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center; /* Center the text */
+}
+
+.food-card {
+  border: none;
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+.go-to-login{
+  text-decoration: none;
+  color: #fff;
+  
+}
+.food-card:hover {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px) scale(1.05);
+}
+
+.food-card img {
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.food-card .card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.food-card .card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #ecf0f1;
+}
+
+.food-card .card-text {
+  font-size: 0.9rem;
+  color: #bdc3c7;
+}
+
+.food-card .btn {
+  width: 100%;
+  background-color: #2ecc71; /* Lighter shade of teal */
+  border: none;
+  transition: background-color 0.3s;
+  color: #ecf0f1;
+}
+
+.food-card .btn:hover {
+  background-color: #27ae60; /* Darker shade of teal on hover */
+}
+
+@media (min-width: 992px) {
+  .col-lg-2 {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+}
