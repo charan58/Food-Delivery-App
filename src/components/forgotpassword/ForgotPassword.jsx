@@ -13,14 +13,18 @@ function ForgotPassword() {
   const navigateToChangePassword = useNavigate();
 
   const handleVerifyOtp = (typedOtp) => {
-    const storedOtp = localStorage.getItem("otp");
+    const storedOtp = localStorage.getItem("otp").toString();
+    // console.log("stored otp ",storedOtp);
+    // console.log("typed otp ",typedOtp);
     if (storedOtp === typedOtp.otp) {
       setOtpState("OTP matched successfully");
+      navigateToChangePassword('/password-reset');
+      localStorage.removeItem("otp");
     } else {
       setOtpState("OTP mismatched, try again");
     }
-    localStorage.removeItem("otp");
-    navigateToChangePassword('/password-reset');
+    
+    
   };
 
   const submitResetPasswordForm = (resetPassObj) => {
@@ -43,6 +47,7 @@ function ForgotPassword() {
 
   const submitOtpForm = (otpObj) => {
     handleVerifyOtp(otpObj);
+    // console.log("otp from client ",otpObj);
   };
 
   return (
